@@ -59,6 +59,8 @@ export const gameContent: Record<Mode, Record<CardKind, string[]>> = {
       "Qual é a fantasia que você tem vergonha de contar?",
       "Já se masturbou pensando em mim?",
       "O que você faria se estivéssemos sozinhos agora e ninguém pudesse interromper?",
+      "eu ja te deixei com tesão algima vez ?",
+      "eu ja te deixei com molhada/melado algima vez ?",
       
       
     ],
@@ -99,6 +101,8 @@ export const gameContent: Record<Mode, Record<CardKind, string[]>> = {
       "já pensou em mim pelada(o)",
       "Qual sua posição favorita?",
       "já se imaginou transando comigo ?",
+      "prefere dominar ou ser dominada(o) ?",
+      "qual gemido ou xingamento você mais gosta de ouvir durante o sexo ?",
     ],
     Desafio: [
       "Deixe a outra pessoa escolher seu próximo status por uma hora.",
@@ -115,6 +119,7 @@ export const gameContent: Record<Mode, Record<CardKind, string[]>> = {
        "beijo em uma parte intima (vendando os olhos)",
        "tire uma peça de roupa (pode ser meia ou acessório)",
        "Simule que esta transando ( com roupa ) por 10 segundos",
+       "Pegar ou deixar pegar na parte ( por cima da roupa ) ",
     ],
   },
 };
