@@ -20,6 +20,7 @@ export const gameContent: Record<Mode, Record<CardKind, string[]>> = {
       "Qual foi a melhor viagem que você já fez?",
       "Se fosse um animal, qual seria e por quê?",
       "Qual é o seu hobby favorito ou o que mais gosta de fazer no tempo livre?",
+      "eu ja te magoei algima vez ?",
     ],
     Desafio: [
       "Imite um personagem por 20 segundos.",
