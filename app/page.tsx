@@ -1,49 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { gameContent, type Mode } from "./data/game-content";
 
-type Mode = "Leve" | "Médio" | "Hard";
 type Player = "Azul" | "Rosa";
 type CardKind = "Pergunta" | "Desafio";
-
-const content: Record<Mode, Record<CardKind, string[]>> = {
-  Leve: {
-    Pergunta: [
-      "Qual foi a primeira impressão que você teve de mim?",
-      "Qual música te faz lembrar de um momento feliz?",
-      "Se pudesse viajar agora, para onde iria?",
-    ],
-    Desafio: [
-      "Imite um personagem por 20 segundos.",
-      "Diga três qualidades da outra pessoa.",
-      "Conte uma história engraçada da sua infância.",
-    ],
-  },
-  Médio: {
-    Pergunta: [
-      "Qual é um sonho que você ainda quer realizar?",
-      "O que você mais valoriza em uma amizade?",
-      "Qual foi a decisão mais corajosa que já tomou?",
-    ],
-    Desafio: [
-      "Deixe a outra pessoa escolher uma foto sua para postar nos stories.",
-      "Envie um áudio cantando o refrão da sua música favorita.",
-      "Faça uma declaração dramática para a outra pessoa.",
-    ],
-  },
-  Hard: {
-    Pergunta: [
-      "O que você nunca teve coragem de me perguntar?",
-      "Qual segredo seu quase ninguém conhece?",
-      "Qual foi a maior vergonha que você já passou?",
-    ],
-    Desafio: [
-      "Deixe a outra pessoa escolher seu próximo status por uma hora.",
-      "Mostre a última foto da sua galeria.",
-      "Ligue para alguém e diga que sente saudade, sem explicar o jogo.",
-    ],
-  },
-};
 
 function randomItem<T>(items: T[]) {
   return items[Math.floor(Math.random() * items.length)];
@@ -70,7 +31,7 @@ export default function Home() {
     const timer = window.setTimeout(() => {
       const nextKind: CardKind = Math.random() < 0.5 ? "Pergunta" : "Desafio";
       setKind(nextKind);
-      setChallenge(randomItem(content[mode][nextKind]));
+      setChallenge(randomItem(gameContent[mode][nextKind]));
       setScreen("card");
     }, 5000);
     return () => window.clearTimeout(timer);
@@ -99,7 +60,7 @@ export default function Home() {
           </div>
 
           <div className="mode-picker" aria-label="Selecione o modo">
-            {(Object.keys(content) as Mode[]).map((item) => (
+            {(Object.keys(gameContent) as Mode[]).map((item) => (
               <button
                 key={item}
                 onClick={() => setMode(item)}
